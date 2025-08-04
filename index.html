@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bug Attack - WhatsApp Report</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: #1e1e1e;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 255, 100, 0.3);
+      text-align: center;
+      max-width: 350px;
+      width: 100%;
+      animation: fadeIn 1s ease;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      animation: bounce 2s infinite;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      background: #2a2a2a;
+      color: #fff;
+    }
+
+    #bugs {
+      text-align: left;
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    button {
+      background: #00ff88;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #00cc70;
+    }
+
+    #preview {
+      background-color: #2a2a2a;
+      color: #0f0;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      display: none;
+      text-align: left;
+      font-size: 14px;
+      white-space: pre-line;
+    }
+
+    /* Red glow animation */
+    .red-glow {
+      background-color: #8b0000 !important;
+      color: #fff !important;
+      box-shadow: 0 0 10px 5px #ff0000;
+      animation: pulse-red 1.5s infinite alternate;
+      transition: background-color 0.3s ease;
+    }
+
+    @keyframes pulse-red {
+      0% {
+        box-shadow: 0 0 5px 3px #ff0000;
+        background-color: #8b0000;
+      }
+      100% {
+        box-shadow: 0 0 20px 8px #ff5555;
+        background-color: #a00000;
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="https://files.catbox.moe/nioazy.jpg" alt="Bug Image">
+    <h2>Bug Attack Panel</h2>
+    <input type="text" id="whatsapp" placeholder="Enter your WhatsApp Number" />
+
+    <div id="bugs">
+      <label><input type="checkbox" value="Login Bug" checked> Login Bug</label>
+      <label><input type="checkbox" value="Crash Bug" checked> Crash Bug</label>
+      <label><input type="checkbox" value="UI Bug" checked> UI Bug</label>
+      <label><input type="checkbox" value="Lag Issue" checked> Lag Issue</label>
+      <label><input type="checkbox" value="Network Error" checked> Network Error</label>
+    </div>
+
+    <div id="preview"></div>
+
+    <button onclick="sendData()">Attack</button>
+  </div>
+
+  <script src="java.js"></script>
+</body>
+</html>
